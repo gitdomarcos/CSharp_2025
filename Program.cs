@@ -16,7 +16,7 @@ namespace CSharp_2025
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPooAtributo2());
+            Application.Run(new frmRevisaoObjList());
         }
     }
 }

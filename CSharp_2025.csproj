@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Animal.cs" />
     <Compile Include="Classes\Calculo.cs" />
     <Compile Include="Classes\Escola.cs" />
     <Compile Include="Classes\Setor.cs" />
@@ -189,6 +190,12 @@
     <Compile Include="frmPooAtributo3.Designer.cs">
       <DependentUpon>frmPooAtributo3.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRevisaoObjList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRevisaoObjList.Designer.cs">
+      <DependentUpon>frmRevisaoObjList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmEnum1.resx">
@@ -259,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPooAtributo3.resx">
       <DependentUpon>frmPooAtributo3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRevisaoObjList.resx">
+      <DependentUpon>frmRevisaoObjList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

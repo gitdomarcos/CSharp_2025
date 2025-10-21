@@ -28,6 +28,11 @@ namespace CSharp_2025
 
         int posicaoIndex = 0;
 
+        private void frmPooAtributo2_Load(object sender, EventArgs e)
+        {
+            ConfigurarEstadoTela(EstadoTela.Novo);
+        }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             if(ValidarCampos() == true)
@@ -67,6 +72,23 @@ namespace CSharp_2025
                 CarregarLista();
                 LimparCampos();
                 ConfigurarEstadoTela(EstadoTela.Novo);
+            }
+        }
+
+        private void grdListaCadastro_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Verifica se tem item dentro da grd
+            if(grdListaCadastro.RowCount > 0)
+            {
+                Escola objCadastro = (Escola) grdListaCadastro.CurrentRow.DataBoundItem;
+
+                txtNomeEscola.Text = objCadastro.NomeEscola;
+                txtNomeDiretor.Text = objCadastro.NomeDiretor;
+                txtQntdProf.Text = Convert.ToString(objCadastro.QntdProf);
+                txtQntdAlunos.Text = Convert.ToString(objCadastro.QntdAluno);
+                //Marca o index na linha clicada
+                posicaoIndex = e.RowIndex;
+                ConfigurarEstadoTela(EstadoTela.Edicao);
             }
         }
 
@@ -131,23 +153,6 @@ namespace CSharp_2025
             grdListaCadastro.DataSource = lstLista;
         }
 
-        private void grdListaCadastro_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Verifica se tem item dentro da grd
-            if(grdListaCadastro.RowCount > 0)
-            {
-                Escola objCadastro = (Escola) grdListaCadastro.CurrentRow.DataBoundItem;
-
-                txtNomeEscola.Text = objCadastro.NomeEscola;
-                txtNomeDiretor.Text = objCadastro.NomeDiretor;
-                txtQntdProf.Text = Convert.ToString(objCadastro.QntdProf);
-                txtQntdAlunos.Text = Convert.ToString(objCadastro.QntdAluno);
-                //Marca o index na linha clicada
-                posicaoIndex = e.RowIndex;
-                ConfigurarEstadoTela(EstadoTela.Edicao);
-            }
-        }
-
         private void Alterar()
         {
             lstLista[posicaoIndex].NomeEscola = txtNomeEscola.Text;
@@ -155,11 +160,6 @@ namespace CSharp_2025
             lstLista[posicaoIndex].QntdProf = Convert.ToInt32(txtQntdProf.Text);
             lstLista[posicaoIndex].QntdAluno = Convert.ToInt32(txtQntdAlunos.Text);
 
-        }
-
-        private void frmPooAtributo2_Load(object sender, EventArgs e)
-        {
-            ConfigurarEstadoTela(EstadoTela.Novo);
         }
     }
 }
