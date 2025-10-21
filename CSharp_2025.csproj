@@ -50,6 +50,7 @@
     <Compile Include="Classes\Escola.cs" />
     <Compile Include="Classes\Setor.cs" />
     <Compile Include="Classes\Viagem.cs" />
+    <Compile Include="Client.cs" />
     <Compile Include="frmEnum1.cs">
       <SubType>Form</SubType>
     </Compile>

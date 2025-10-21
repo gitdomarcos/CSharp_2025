@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.gbfrmPooAtributo2 = new System.Windows.Forms.GroupBox();
-            this.txtNomeEscola = new System.Windows.Forms.TextBox();
-            this.lblNomeEscola = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.lblNomeDiretor = new System.Windows.Forms.Label();
-            this.lblQntdProfessores = new System.Windows.Forms.Label();
-            this.lblQntdAlunos = new System.Windows.Forms.Label();
-            this.txtNomeDiretor = new System.Windows.Forms.TextBox();
-            this.txtQntdProf = new System.Windows.Forms.TextBox();
-            this.txtQntdAlunos = new System.Windows.Forms.TextBox();
-            this.grdListaCadastro = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.grdListaCadastro = new System.Windows.Forms.DataGridView();
+            this.txtQntdAlunos = new System.Windows.Forms.TextBox();
+            this.txtQntdProf = new System.Windows.Forms.TextBox();
+            this.txtNomeDiretor = new System.Windows.Forms.TextBox();
+            this.lblQntdAlunos = new System.Windows.Forms.Label();
+            this.txtNomeEscola = new System.Windows.Forms.TextBox();
+            this.lblQntdProfessores = new System.Windows.Forms.Label();
+            this.lblNomeDiretor = new System.Windows.Forms.Label();
+            this.lblNomeEscola = new System.Windows.Forms.Label();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.gbfrmPooAtributo2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaCadastro)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +48,7 @@
             // gbfrmPooAtributo2
             // 
             this.gbfrmPooAtributo2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gbfrmPooAtributo2.Controls.Add(this.btnAlterar);
             this.gbfrmPooAtributo2.Controls.Add(this.btnCancelar);
             this.gbfrmPooAtributo2.Controls.Add(this.btnCadastrar);
             this.gbfrmPooAtributo2.Controls.Add(this.grdListaCadastro);
@@ -66,82 +68,31 @@
             this.gbfrmPooAtributo2.TabStop = false;
             this.gbfrmPooAtributo2.Text = "Exercício 02 – POO: Métodos";
             // 
-            // txtNomeEscola
+            // btnCancelar
             // 
-            this.txtNomeEscola.Location = new System.Drawing.Point(320, 47);
-            this.txtNomeEscola.Name = "txtNomeEscola";
-            this.txtNomeEscola.Size = new System.Drawing.Size(272, 36);
-            this.txtNomeEscola.TabIndex = 1;
-            // 
-            // lblNomeEscola
-            // 
-            this.lblNomeEscola.AutoSize = true;
-            this.lblNomeEscola.Location = new System.Drawing.Point(98, 50);
-            this.lblNomeEscola.Name = "lblNomeEscola";
-            this.lblNomeEscola.Size = new System.Drawing.Size(207, 29);
-            this.lblNomeEscola.TabIndex = 2;
-            this.lblNomeEscola.Text = "Nome da Escola:";
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnCancelar.Location = new System.Drawing.Point(536, 513);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(164, 39);
+            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnCadastrar.Location = new System.Drawing.Point(545, 513);
+            this.btnCadastrar.Location = new System.Drawing.Point(360, 513);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(164, 39);
             this.btnCadastrar.TabIndex = 5;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // lblNomeDiretor
-            // 
-            this.lblNomeDiretor.AutoSize = true;
-            this.lblNomeDiretor.Location = new System.Drawing.Point(104, 102);
-            this.lblNomeDiretor.Name = "lblNomeDiretor";
-            this.lblNomeDiretor.Size = new System.Drawing.Size(201, 29);
-            this.lblNomeDiretor.TabIndex = 3;
-            this.lblNomeDiretor.Text = "Nome do diretor:";
-            // 
-            // lblQntdProfessores
-            // 
-            this.lblQntdProfessores.AutoSize = true;
-            this.lblQntdProfessores.Location = new System.Drawing.Point(16, 154);
-            this.lblQntdProfessores.Name = "lblQntdProfessores";
-            this.lblQntdProfessores.Size = new System.Drawing.Size(289, 29);
-            this.lblQntdProfessores.TabIndex = 4;
-            this.lblQntdProfessores.Text = "Quantidade professores:";
-            // 
-            // lblQntdAlunos
-            // 
-            this.lblQntdAlunos.AutoSize = true;
-            this.lblQntdAlunos.Location = new System.Drawing.Point(73, 206);
-            this.lblQntdAlunos.Name = "lblQntdAlunos";
-            this.lblQntdAlunos.Size = new System.Drawing.Size(232, 29);
-            this.lblQntdAlunos.TabIndex = 5;
-            this.lblQntdAlunos.Text = "Quantidade alunos:";
-            // 
-            // txtNomeDiretor
-            // 
-            this.txtNomeDiretor.Location = new System.Drawing.Point(320, 99);
-            this.txtNomeDiretor.Name = "txtNomeDiretor";
-            this.txtNomeDiretor.Size = new System.Drawing.Size(272, 36);
-            this.txtNomeDiretor.TabIndex = 2;
-            // 
-            // txtQntdProf
-            // 
-            this.txtQntdProf.Location = new System.Drawing.Point(320, 151);
-            this.txtQntdProf.Name = "txtQntdProf";
-            this.txtQntdProf.Size = new System.Drawing.Size(272, 36);
-            this.txtQntdProf.TabIndex = 3;
-            // 
-            // txtQntdAlunos
-            // 
-            this.txtQntdAlunos.Location = new System.Drawing.Point(320, 203);
-            this.txtQntdAlunos.Name = "txtQntdAlunos";
-            this.txtQntdAlunos.Size = new System.Drawing.Size(272, 36);
-            this.txtQntdAlunos.TabIndex = 4;
             // 
             // grdListaCadastro
             // 
@@ -155,19 +106,84 @@
             this.grdListaCadastro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdListaCadastro.Size = new System.Drawing.Size(876, 241);
             this.grdListaCadastro.TabIndex = 9;
+            this.grdListaCadastro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListaCadastro_CellClick);
             // 
-            // btnCancelar
+            // txtQntdAlunos
             // 
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnCancelar.Location = new System.Drawing.Point(721, 513);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(164, 39);
-            this.btnCancelar.TabIndex = 6;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.txtQntdAlunos.Location = new System.Drawing.Point(320, 203);
+            this.txtQntdAlunos.Name = "txtQntdAlunos";
+            this.txtQntdAlunos.Size = new System.Drawing.Size(272, 36);
+            this.txtQntdAlunos.TabIndex = 4;
+            // 
+            // txtQntdProf
+            // 
+            this.txtQntdProf.Location = new System.Drawing.Point(320, 151);
+            this.txtQntdProf.Name = "txtQntdProf";
+            this.txtQntdProf.Size = new System.Drawing.Size(272, 36);
+            this.txtQntdProf.TabIndex = 3;
+            // 
+            // txtNomeDiretor
+            // 
+            this.txtNomeDiretor.Location = new System.Drawing.Point(320, 99);
+            this.txtNomeDiretor.Name = "txtNomeDiretor";
+            this.txtNomeDiretor.Size = new System.Drawing.Size(272, 36);
+            this.txtNomeDiretor.TabIndex = 2;
+            // 
+            // lblQntdAlunos
+            // 
+            this.lblQntdAlunos.AutoSize = true;
+            this.lblQntdAlunos.Location = new System.Drawing.Point(73, 206);
+            this.lblQntdAlunos.Name = "lblQntdAlunos";
+            this.lblQntdAlunos.Size = new System.Drawing.Size(232, 29);
+            this.lblQntdAlunos.TabIndex = 5;
+            this.lblQntdAlunos.Text = "Quantidade alunos:";
+            // 
+            // txtNomeEscola
+            // 
+            this.txtNomeEscola.Location = new System.Drawing.Point(320, 47);
+            this.txtNomeEscola.Name = "txtNomeEscola";
+            this.txtNomeEscola.Size = new System.Drawing.Size(272, 36);
+            this.txtNomeEscola.TabIndex = 1;
+            // 
+            // lblQntdProfessores
+            // 
+            this.lblQntdProfessores.AutoSize = true;
+            this.lblQntdProfessores.Location = new System.Drawing.Point(16, 154);
+            this.lblQntdProfessores.Name = "lblQntdProfessores";
+            this.lblQntdProfessores.Size = new System.Drawing.Size(289, 29);
+            this.lblQntdProfessores.TabIndex = 4;
+            this.lblQntdProfessores.Text = "Quantidade professores:";
+            // 
+            // lblNomeDiretor
+            // 
+            this.lblNomeDiretor.AutoSize = true;
+            this.lblNomeDiretor.Location = new System.Drawing.Point(104, 102);
+            this.lblNomeDiretor.Name = "lblNomeDiretor";
+            this.lblNomeDiretor.Size = new System.Drawing.Size(201, 29);
+            this.lblNomeDiretor.TabIndex = 3;
+            this.lblNomeDiretor.Text = "Nome do diretor:";
+            // 
+            // lblNomeEscola
+            // 
+            this.lblNomeEscola.AutoSize = true;
+            this.lblNomeEscola.Location = new System.Drawing.Point(98, 50);
+            this.lblNomeEscola.Name = "lblNomeEscola";
+            this.lblNomeEscola.Size = new System.Drawing.Size(207, 29);
+            this.lblNomeEscola.TabIndex = 2;
+            this.lblNomeEscola.Text = "Nome da Escola:";
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnAlterar.Location = new System.Drawing.Point(706, 513);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(164, 39);
+            this.btnAlterar.TabIndex = 6;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // frmPooAtributo2
             // 
@@ -179,6 +195,7 @@
             this.Name = "frmPooAtributo2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPooAtributo2";
+            this.Load += new System.EventHandler(this.frmPooAtributo2_Load);
             this.gbfrmPooAtributo2.ResumeLayout(false);
             this.gbfrmPooAtributo2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaCadastro)).EndInit();
@@ -200,5 +217,6 @@
         private System.Windows.Forms.Label lblNomeDiretor;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridView grdListaCadastro;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }

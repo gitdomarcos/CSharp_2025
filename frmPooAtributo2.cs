@@ -18,7 +18,15 @@ namespace CSharp_2025
             InitializeComponent();
         }
 
+        private enum EstadoTela
+        {
+            Novo,
+            Edicao
+        }
+
         List<Escola> lstLista = new List<Escola>();
+
+        int posicaoIndex = 0;
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -47,7 +55,35 @@ namespace CSharp_2025
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimparCampos();
-            grdListaCadastro.DataSource = null;
+            ConfigurarEstadoTela(EstadoTela.Novo);
+            //grdListaCadastro.DataSource = null;
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (ValidarCampos())
+            {
+                Alterar();
+                CarregarLista();
+                LimparCampos();
+                ConfigurarEstadoTela(EstadoTela.Novo);
+            }
+        }
+
+        private void ConfigurarEstadoTela(EstadoTela tela)
+        {
+            switch (tela)
+            {
+                case EstadoTela.Novo:
+                    btnCadastrar.Enabled = true;
+                    btnAlterar.Enabled = false;
+                    break;
+
+                case EstadoTela.Edicao:
+                    btnCadastrar.Enabled = false;
+                    btnAlterar.Enabled = true;
+                    break;
+            }
         }
 
         private bool ValidarCampos()
@@ -93,6 +129,37 @@ namespace CSharp_2025
         {
             grdListaCadastro.DataSource = null;
             grdListaCadastro.DataSource = lstLista;
+        }
+
+        private void grdListaCadastro_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Verifica se tem item dentro da grd
+            if(grdListaCadastro.RowCount > 0)
+            {
+                Escola objCadastro = (Escola) grdListaCadastro.CurrentRow.DataBoundItem;
+
+                txtNomeEscola.Text = objCadastro.NomeEscola;
+                txtNomeDiretor.Text = objCadastro.NomeDiretor;
+                txtQntdProf.Text = Convert.ToString(objCadastro.QntdProf);
+                txtQntdAlunos.Text = Convert.ToString(objCadastro.QntdAluno);
+                //Marca o index na linha clicada
+                posicaoIndex = e.RowIndex;
+                ConfigurarEstadoTela(EstadoTela.Edicao);
+            }
+        }
+
+        private void Alterar()
+        {
+            lstLista[posicaoIndex].NomeEscola = txtNomeEscola.Text;
+            lstLista[posicaoIndex].NomeDiretor = txtNomeDiretor.Text;
+            lstLista[posicaoIndex].QntdProf = Convert.ToInt32(txtQntdProf.Text);
+            lstLista[posicaoIndex].QntdAluno = Convert.ToInt32(txtQntdAlunos.Text);
+
+        }
+
+        private void frmPooAtributo2_Load(object sender, EventArgs e)
+        {
+            ConfigurarEstadoTela(EstadoTela.Novo);
         }
     }
 }
