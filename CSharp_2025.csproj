@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0C8EC15-5FF3-43C6-8880-468CC280A0EE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CSharp_2025</RootNamespace>
+    <AssemblyName>CSharp_2025</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Calculo.cs" />
+    <Compile Include="Classes\Escola.cs" />
+    <Compile Include="Classes\Setor.cs" />
+    <Compile Include="Classes\Viagem.cs" />
+    <Compile Include="frmEnum1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnum1.Designer.cs">
+      <DependentUpon>frmEnum1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnum2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnum2.Designer.cs">
+      <DependentUpon>frmEnum2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnum3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnum3.Designer.cs">
+      <DependentUpon>frmEnum3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLinq1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLinq1.Designer.cs">
+      <DependentUpon>frmLinq1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLinq2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLinq2.Designer.cs">
+      <DependentUpon>frmLinq2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLinq3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLinq3.Designer.cs">
+      <DependentUpon>frmLinq3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLinqConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLinqConsulta.Designer.cs">
+      <DependentUpon>frmLinqConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaExemploFor3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaExemploFor3.Designer.cs">
+      <DependentUpon>frmListaExemploFor3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListGenerics1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListGenerics1.Designer.cs">
+      <DependentUpon>frmListGenerics1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListGenerics2%281%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListGenerics2%281%29.Designer.cs">
+      <DependentUpon>frmListGenerics2%281%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListGenerics2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListGenerics2.Designer.cs">
+      <DependentUpon>frmListGenerics2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMetodo1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMetodo1.Designer.cs">
+      <DependentUpon>frmMetodo1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMetodo2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMetodo2.Designer.cs">
+      <DependentUpon>frmMetodo2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMetodo3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMetodo3.Designer.cs">
+      <DependentUpon>frmMetodo3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOperador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOperador.Designer.cs">
+      <DependentUpon>frmOperador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOperador2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOperador2.Designer.cs">
+      <DependentUpon>frmOperador2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOperador3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOperador3.Designer.cs">
+      <DependentUpon>frmOperador3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOperador4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOperador4.Designer.cs">
+      <DependentUpon>frmOperador4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOperador5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOperador5.Designer.cs">
+      <DependentUpon>frmOperador5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOperador6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOperador6.Designer.cs">
+      <DependentUpon>frmOperador6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPooAtributo1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPooAtributo1.Designer.cs">
+      <DependentUpon>frmPooAtributo1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPooAtributo2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPooAtributo2.Designer.cs">
+      <DependentUpon>frmPooAtributo2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPooAtributo3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPooAtributo3.Designer.cs">
+      <DependentUpon>frmPooAtributo3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmEnum1.resx">
+      <DependentUpon>frmEnum1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnum2.resx">
+      <DependentUpon>frmEnum2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnum3.resx">
+      <DependentUpon>frmEnum3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLinq1.resx">
+      <DependentUpon>frmLinq1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLinq2.resx">
+      <DependentUpon>frmLinq2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLinq3.resx">
+      <DependentUpon>frmLinq3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLinqConsulta.resx">
+      <DependentUpon>frmLinqConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaExemploFor3.resx">
+      <DependentUpon>frmListaExemploFor3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListGenerics1.resx">
+      <DependentUpon>frmListGenerics1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListGenerics2%281%29.resx">
+      <DependentUpon>frmListGenerics2%281%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListGenerics2.resx">
+      <DependentUpon>frmListGenerics2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMetodo1.resx">
+      <DependentUpon>frmMetodo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMetodo2.resx">
+      <DependentUpon>frmMetodo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMetodo3.resx">
+      <DependentUpon>frmMetodo3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOperador.resx">
+      <DependentUpon>frmOperador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOperador2.resx">
+      <DependentUpon>frmOperador2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOperador3.resx">
+      <DependentUpon>frmOperador3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOperador4.resx">
+      <DependentUpon>frmOperador4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOperador5.resx">
+      <DependentUpon>frmOperador5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOperador6.resx">
+      <DependentUpon>frmOperador6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPooAtributo1.resx">
+      <DependentUpon>frmPooAtributo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPooAtributo2.resx">
+      <DependentUpon>frmPooAtributo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPooAtributo3.resx">
+      <DependentUpon>frmPooAtributo3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gordão segurando coxinha.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
