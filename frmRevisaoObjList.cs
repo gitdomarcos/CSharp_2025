@@ -37,18 +37,23 @@ namespace CSharp_2025
             objAnimal.Nome = nome;
 
             objAnimal.InserirEspecie(especie);
-            bool validarPeso = objAnimal.InserirPeso(peso);
+            //bool validarPeso = objAnimal.InserirPeso(peso);
 
-            if (validarPeso)
+            if (objAnimal.InserirPeso(peso))
                 lstAnimais.Add(objAnimal);
             else
-                MessageBox.Show("Errado");
+                MessageBox.Show("Peso incorreto!");
         }
 
         private void CarregarLista()
         {
             grdLista.DataSource = null;
             grdLista.DataSource = lstAnimais;
+        }
+
+        private void LimparCampos()
+        {
+
         }
     }
 }
