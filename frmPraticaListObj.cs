@@ -26,6 +26,8 @@ namespace CSharp_2025
 
         List<Boletim> lstBoletim = new List<Boletim>();
 
+        int posicaoIndex = 0;
+
         private void frmPraticaListObj_Load(object sender, EventArgs e)
         {
 
@@ -33,17 +35,20 @@ namespace CSharp_2025
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            if (ValidarCampos())
+            {
 
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            LimparCampos();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -75,7 +80,7 @@ namespace CSharp_2025
 
         private void ConfiguarEstadoTela(EstadoTela edicao)
         {
-            throw new NotImplementedException();
+            
         }
 
         private bool ValidarCampos()
@@ -107,6 +112,11 @@ namespace CSharp_2025
             txtNota3.Clear();
             txtNota4.Clear();
             txtNome.Focus();
+        }
+
+        private void Alterar()
+        {
+
         }
     }
 }
