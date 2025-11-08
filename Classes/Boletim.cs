@@ -8,28 +8,25 @@ namespace CSharp_2025.Classes
 {
     public class Boletim
     {
-        /// <summary>
-        /// Calcula média anul do aluno
-        /// </summary>
-        /// <param name="nota1">Nota referente ao primeiro bim</param>
-        /// <param name="nota2">Nota referente ao segundo bim</param>
-        /// <param name="nota3">Nota referente ao terceiro bim</param>
-        /// <param name="nota4">Nota referente ao quarto bim</param>
-        /// <returns>Retorna a média anual do aluno</returns>
-        public decimal CalcularMedia(decimal nota1, decimal nota2, decimal nota3, decimal nota4)
+        public Boletim(string nome, decimal nota1, decimal nota2, decimal nota3, decimal nota4)
         {
-            decimal media;
+            this.Nome = nome;
+            this.Nota1 = nota1;
+            this.Nota2 = nota2;
+            this.Nota3 = nota3;
+            this.Nota4 = nota4;
+            this.Media = CalcularMedia(nota1, nota2, nota3, nota4);
+            this.Classificacao = VerClassificacao(this.Media);
 
-            media = nota1 + nota2 + nota3 + nota4 / 4;
-
-            return media;
         }
-        /// <summary>
-        /// Get e Set valores DataGridView
-        /// </summary>
-        public string Nome {  get; set; }
 
-        public decimal Media { get; set; }
+        public Boletim()
+        {
+
+        }
+
+        #region Propriedades
+        public string Nome { get; set; }
 
         public decimal Nota1 { get; set; }
 
@@ -39,7 +36,44 @@ namespace CSharp_2025.Classes
 
         public decimal Nota4 { get; set; }
 
-        public string Resultado { get; set; }
+        public decimal Media { get; set; }
+
+        public string Classificacao { get; set; }
+
+        #endregion
+
+        #region Metodo
+
+        public decimal CalcularMedia(decimal nota1, decimal nota2, decimal nota3, decimal nota4)
+        {
+            decimal media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+            return media;
+        }
+
+        public string VerClassificacao(decimal media)
+        {
+            string classificacao = string.Empty;
+
+            if (media >= 0 && media < 40)
+            {
+                classificacao = "REPROVADO";
+            }
+
+            else if (media >= 40 && media < 60)
+            {
+                classificacao = "EXAME";
+            }
+
+            else if (media >= 60)
+            {
+                classificacao = "APROVADO";
+            }
+
+            return classificacao;
+        }
+
+        #endregion
 
     }
 }

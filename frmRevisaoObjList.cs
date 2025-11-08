@@ -44,7 +44,6 @@ namespace CSharp_2025
             CarregarLista();
         }
 
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimparCampos();
