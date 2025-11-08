@@ -95,11 +95,11 @@
             // btnRelatorio
             // 
             this.btnRelatorio.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnRelatorio.Location = new System.Drawing.Point(806, 644);
+            this.btnRelatorio.Location = new System.Drawing.Point(926, 644);
             this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(172, 50);
+            this.btnRelatorio.Size = new System.Drawing.Size(230, 50);
             this.btnRelatorio.TabIndex = 11;
-            this.btnRelatorio.Text = "Relatório";
+            this.btnRelatorio.Text = "Gerar Arquivo";
             this.btnRelatorio.UseVisualStyleBackColor = true;
             this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
             // 

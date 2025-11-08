@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CSharp_2025
 {
@@ -100,13 +101,17 @@ namespace CSharp_2025
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-
+            if(MessageBox.Show("Deseja excluir o registro?", "Confirmação exclusão!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Excluir();
+                LimparCampos();
+                CarregarBoletins();
+            }
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
-
-
+            GerarArquivo();
         }
 
         private void grdAlunos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -132,6 +137,8 @@ namespace CSharp_2025
         }
 
         #endregion
+
+
 
         #region Métodos Privados
 
@@ -184,6 +191,22 @@ namespace CSharp_2025
             txtNome.Focus();
         }
 
+        private void Cadastrar(string nome, decimal nota1, decimal nota2, decimal nota3, decimal nota4)
+        {
+            Boletim objBoletim = new Boletim(nome, nota1, nota2, nota3, nota4);
+
+            objBoletim.Nome = nome;
+            objBoletim.Nota1 = nota1;
+            objBoletim.Nota2 = nota2;
+            objBoletim.Nota3 = nota3;
+            objBoletim.Nota4 = nota4;
+
+            lstBoletim.Add(objBoletim);
+            CarregarBoletins();
+            LimparCampos();
+            ConfigurarEstadoTela(EstadoTela.Novo);
+        }
+
         private void Alterar(string nome, decimal nota1, decimal nota2, decimal nota3, decimal nota4)
         {
             Boletim objBoletim = new Boletim();
@@ -201,20 +224,9 @@ namespace CSharp_2025
             ConfigurarEstadoTela(EstadoTela.Novo);
         }
 
-        private void Cadastrar(string nome, decimal nota1, decimal nota2, decimal nota3, decimal nota4)
+        private void Excluir()
         {
-            Boletim objBoletim = new Boletim(nome, nota1, nota2, nota3, nota4);
-
-            objBoletim.Nome = nome;
-            objBoletim.Nota1 = nota1;
-            objBoletim.Nota2 = nota2;
-            objBoletim.Nota3 = nota3;
-            objBoletim.Nota4 = nota4;
-
-            lstBoletim.Add(objBoletim);
-            CarregarBoletins();
-            LimparCampos();
-            ConfigurarEstadoTela(EstadoTela.Novo);
+            lstBoletim.RemoveAt(posicaoIndex);
         }
 
         private void CarregarBoletins()
@@ -251,8 +263,39 @@ namespace CSharp_2025
             }
         }
 
+        private void GerarArquivo()
+        {
+            if(lstBoletim.Count == 0)
+            {
+                MessageBox.Show("Não existe nenhum aluno adicionado");
+            }
+            else
+            {
+                //Local no qual guardará o arquivo com o seu nome
+                string pathFile = @"C:\Users\marca\OneDrive\Área de Trabalho\C Sharp\2025\LogicaProgramação\Arquivo Boletim\boletim.txt";
+                try
+                {
+                    using (StreamWriter arquivo = new StreamWriter(pathFile))
+                    {
+                        arquivo.WriteLine("-------------------------------------------------------");
+                        arquivo.WriteLine("          ***********  BOLETINS  **********");
+                        arquivo.WriteLine("-------------------------------------------------------");
+
+                        foreach (var item in lstBoletim)
+                        {
+                            arquivo.WriteLine($"Nome: {item.Nome}, Média: {item.Media} - Classificação: {item.Classificacao}");
+                        }
+                    }
+
+                    MessageBox.Show("Arquivo gerado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Ocorreu um erro ao gerar o arquivo!");
+                }
+            }
+        }
+
         #endregion
-
-
     }
 }
