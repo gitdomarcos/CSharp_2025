@@ -51,6 +51,7 @@
     <Compile Include="Classes\Calculo.cs" />
     <Compile Include="Classes\Escola.cs" />
     <Compile Include="Classes\Setor.cs" />
+    <Compile Include="Classes\Util.cs" />
     <Compile Include="Classes\Viagem.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="frmEnum1.cs">
@@ -203,6 +204,12 @@
     <Compile Include="frmRevisaoObjList.Designer.cs">
       <DependentUpon>frmRevisaoObjList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmXML_CRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXML_CRUD.Designer.cs">
+      <DependentUpon>frmXML_CRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmEnum1.resx">
@@ -279,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRevisaoObjList.resx">
       <DependentUpon>frmRevisaoObjList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXML_CRUD.resx">
+      <DependentUpon>frmXML_CRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
