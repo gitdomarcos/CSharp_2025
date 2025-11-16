@@ -91,7 +91,26 @@ namespace CSharp_2025
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Deseja excluir o arquivo!", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string codigo;
 
+                try
+                {
+                    codigo = txtCodigo.Text;
+
+                    Excluir(codigo);
+                    LimparCampos();
+                    Consultar();
+                    Util.ConfigurarEstadoTela(Util.EstadoTela.Novo, btnCadastrar, btnAlterar, btnExcluir);
+
+                    MessageBox.Show("Cadastro excluido com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Erro ao excluir o arquivo!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void grdPessoa_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -281,15 +300,20 @@ namespace CSharp_2025
         private void Excluir(string codigo)
         {
             XmlDocument xml = new XmlDocument();
-            xml.Load(Util.pathFileXml);
 
-            XmlNode xmlDelete = xml.SelectSingleNode($"//item[codigo='{codigo}']");
-
-            if (xmlDelete != null) 
+            if (File.Exists(Util.pathFileXml))
             {
-                xmlDelete.ParentNode.RemoveChild(xmlDelete);
-                xml.Save(Util.pathFileXml);
+                xml.Load(Util.pathFileXml);
+
+                XmlNode noInformacao = xml.SelectSingleNode($"//item[codigo='{codigo}']");
+
+                if (noInformacao != null)
+                {
+                    noInformacao.ParentNode.RemoveChild(noInformacao);
+                    xml.Save(Util.pathFileXml);
+                }
             }
+            
         }
 
         #endregion
