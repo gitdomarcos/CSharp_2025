@@ -41,7 +41,7 @@ namespace CSharp_2025
         {
             if (VerificarCampos(Validacao.Adicao))
             {
-                string nome, categoria;
+                string nome; //categoria;
                 double peso;
 
 

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.gbXML = new System.Windows.Forms.GroupBox();
-            this.btnXML = new System.Windows.Forms.Button();
             this.grdPessoa = new System.Windows.Forms.DataGridView();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -39,17 +38,16 @@
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblRua = new System.Windows.Forms.Label();
             this.txtRua = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
             this.gbXML.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPessoa)).BeginInit();
             this.SuspendLayout();
             // 
             // gbXML
             // 
-            this.gbXML.Controls.Add(this.btnXML);
             this.gbXML.Controls.Add(this.grdPessoa);
             this.gbXML.Controls.Add(this.btnExcluir);
             this.gbXML.Controls.Add(this.btnAlterar);
@@ -66,35 +64,30 @@
             this.gbXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbXML.Location = new System.Drawing.Point(12, 12);
             this.gbXML.Name = "gbXML";
-            this.gbXML.Size = new System.Drawing.Size(1400, 726);
+            this.gbXML.Size = new System.Drawing.Size(1035, 726);
             this.gbXML.TabIndex = 0;
             this.gbXML.TabStop = false;
             this.gbXML.Text = "XML - CRUD";
             // 
-            // btnXML
-            // 
-            this.btnXML.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnXML.Location = new System.Drawing.Point(1218, 659);
-            this.btnXML.Name = "btnXML";
-            this.btnXML.Size = new System.Drawing.Size(171, 55);
-            this.btnXML.TabIndex = 9;
-            this.btnXML.Text = "Gerar XML";
-            this.btnXML.UseVisualStyleBackColor = true;
-            // 
             // grdPessoa
             // 
+            this.grdPessoa.AllowUserToAddRows = false;
+            this.grdPessoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdPessoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdPessoa.Location = new System.Drawing.Point(6, 331);
             this.grdPessoa.Name = "grdPessoa";
+            this.grdPessoa.ReadOnly = true;
             this.grdPessoa.RowHeadersWidth = 51;
             this.grdPessoa.RowTemplate.Height = 24;
-            this.grdPessoa.Size = new System.Drawing.Size(1388, 318);
+            this.grdPessoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdPessoa.Size = new System.Drawing.Size(1018, 389);
             this.grdPessoa.TabIndex = 8;
+            this.grdPessoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPessoa_CellClick);
             // 
             // btnExcluir
             // 
             this.btnExcluir.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnExcluir.Location = new System.Drawing.Point(1012, 248);
+            this.btnExcluir.Location = new System.Drawing.Point(774, 239);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(250, 67);
             this.btnExcluir.TabIndex = 7;
@@ -105,7 +98,7 @@
             // btnAlterar
             // 
             this.btnAlterar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnAlterar.Location = new System.Drawing.Point(732, 248);
+            this.btnAlterar.Location = new System.Drawing.Point(518, 239);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(250, 67);
             this.btnAlterar.TabIndex = 6;
@@ -116,7 +109,7 @@
             // btnCancelar
             // 
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnCancelar.Location = new System.Drawing.Point(455, 248);
+            this.btnCancelar.Location = new System.Drawing.Point(262, 239);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(250, 67);
             this.btnCancelar.TabIndex = 5;
@@ -127,7 +120,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnCadastrar.Location = new System.Drawing.Point(163, 248);
+            this.btnCadastrar.Location = new System.Drawing.Point(6, 239);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(250, 67);
             this.btnCadastrar.TabIndex = 4;
@@ -147,10 +140,11 @@
             // 
             // txtBairro
             // 
+            this.txtBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairro.Location = new System.Drawing.Point(140, 183);
+            this.txtBairro.Location = new System.Drawing.Point(146, 183);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(285, 36);
+            this.txtBairro.Size = new System.Drawing.Size(492, 36);
             this.txtBairro.TabIndex = 3;
             // 
             // lblRua
@@ -165,11 +159,30 @@
             // 
             // txtRua
             // 
+            this.txtRua.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRua.Location = new System.Drawing.Point(140, 137);
+            this.txtRua.Location = new System.Drawing.Point(146, 137);
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(285, 36);
+            this.txtRua.Size = new System.Drawing.Size(492, 36);
             this.txtRua.TabIndex = 2;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(30, 51);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(107, 29);
+            this.lblCodigo.TabIndex = 1;
+            this.lblCodigo.Text = "Código:";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(147, 47);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(135, 36);
+            this.txtCodigo.TabIndex = 1;
             // 
             // lblNome
             // 
@@ -183,35 +196,18 @@
             // 
             // txtNome
             // 
+            this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(140, 91);
+            this.txtNome.Location = new System.Drawing.Point(146, 91);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(285, 36);
+            this.txtNome.Size = new System.Drawing.Size(492, 36);
             this.txtNome.TabIndex = 1;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(141, 47);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(285, 36);
-            this.txtCodigo.TabIndex = 1;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(30, 51);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(107, 29);
-            this.lblCodigo.TabIndex = 1;
-            this.lblCodigo.Text = "Código:";
             // 
             // frmXML_CRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1424, 750);
+            this.ClientSize = new System.Drawing.Size(1059, 747);
             this.Controls.Add(this.gbXML);
             this.Name = "frmXML_CRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -237,7 +233,6 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnXML;
         private System.Windows.Forms.DataGridView grdPessoa;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtCodigo;

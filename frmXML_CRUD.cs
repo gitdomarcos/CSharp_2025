@@ -19,12 +19,55 @@ namespace CSharp_2025
         {
             InitializeComponent();
         }
+        private void frmXML_CRUD_Load(object sender, EventArgs e)
+        {
+            Util.ConfigurarEstadoTela(Util.EstadoTela.Novo, btnCadastrar, btnAlterar, btnExcluir);
+            Consultar();
+        }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             if (ValidarCampos())
             {
+                string codigo, nome, rua, bairro;
+
+                try
+                {
+                    codigo = txtCodigo.Text;
+                    if (VerificarCodigo(codigo))
+                    {
+                        nome = txtNome.Text;
+                        rua = txtRua.Text;
+                        bairro = txtBairro.Text;
+
+                        Cadastrar(codigo, nome, rua, bairro);
+                        LimparCampos();
+                        Consultar();
+                        Util.ConfigurarEstadoTela(Util.EstadoTela.Novo, btnCadastrar, btnAlterar, btnExcluir);
+                        MessageBox.Show("Pessoa cadastrada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("O código ja existe!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao cadastrar a pessoa!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Util.ConfigurarEstadoTela(Util.EstadoTela.Novo, btnCadastrar, btnAlterar, btnExcluir);
+            LimparCampos();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (ValidarCampos())
+            {
                 string nome, rua, bairro, codigo;
+
                 try
                 {
                     codigo = txtCodigo.Text;
@@ -32,25 +75,18 @@ namespace CSharp_2025
                     rua = txtRua.Text;
                     bairro = txtBairro.Text;
 
-                    Cadastrar(codigo, nome, rua, bairro);
+                    Alterar(codigo, nome, rua, bairro);
                     LimparCampos();
-                    MessageBox.Show("Pessoa cadastrada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Consultar();
+                    Util.ConfigurarEstadoTela(Util.EstadoTela.Novo, btnCadastrar, btnAlterar, btnExcluir);
+
+                    MessageBox.Show("Cadastro alterado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception ex) 
+                catch
                 {
-                    MessageBox.Show("Erro ao cadastrar a pessoa", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Erro ao alterar o cadastro!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -58,11 +94,23 @@ namespace CSharp_2025
 
         }
 
-        private void frmXML_CRUD_Load(object sender, EventArgs e)
+        private void grdPessoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Util.ConfigurarEstadoTela(Util.EstadoTela.Novo, btnCadastrar, btnCancelar, btnAlterar, btnExcluir);
-        }
+            if(grdPessoa.RowCount > 0)
+            {
+                var objLinhaClicada = (DataRowView)grdPessoa.CurrentRow.DataBoundItem;
 
+                txtCodigo.Text = objLinhaClicada.Row["codigo"].ToString();
+                txtNome.Text = objLinhaClicada.Row["nome"].ToString();
+                txtRua.Text = objLinhaClicada.Row["rua"].ToString();
+                txtBairro.Text = objLinhaClicada.Row["bairro"].ToString();
+
+                txtCodigo.Enabled = false;
+
+                Util.ConfigurarEstadoTela(Util.EstadoTela.Edicao, btnCadastrar, btnAlterar, btnExcluir);
+
+            }
+        }
 
 
         #region Métodos do Formulário
@@ -71,7 +119,7 @@ namespace CSharp_2025
         {
             bool flag = true;
 
-            if (txtCodigo.Text.Trim() == string.Empty 
+            if (txtCodigo.Text.Trim() == string.Empty
                 || txtNome.Text.Trim() == string.Empty
                 || txtRua.Text.Trim() == string.Empty
                 || txtBairro.Text.Trim() == string.Empty)
@@ -89,10 +137,11 @@ namespace CSharp_2025
             txtBairro.Clear();
             txtRua.Clear();
             txtCodigo.Clear();
+            txtCodigo.Enabled = true;
             txtCodigo.Focus();
         }
 
-        private void Cadastrar(string codigo,string nome, string rua, string bairro)
+        private void Cadastrar(string codigo, string nome, string rua, string bairro)
         {
             XmlDocument xml = new XmlDocument();
 
@@ -146,6 +195,104 @@ namespace CSharp_2025
             xml.Save(Util.pathFileXml);
         }
 
+        private void Consultar()
+        {
+            try
+            {
+                grdPessoa.DataSource = null;
+
+                if (File.Exists(Util.pathFileXml))
+                {
+                    //Criar meu DATA SET(obj) para receber o conteúdo do XML
+                    DataSet ds = new DataSet();
+                    //Carregar o conteúdo do meu arquivo
+                    ds.ReadXml(Util.pathFileXml);
+
+                    //Verifica se encontrou o conteúdo
+                    if (ds.Tables.Count > 0)
+                    {
+                        grdPessoa.DataSource = ds.Tables[0];
+
+                        //Personalizar nomes colunas da tabela
+                        grdPessoa.Columns["codigo"].HeaderText = "CÓDIGO";
+                        grdPessoa.Columns["nome"].HeaderText = "NOME";
+                        grdPessoa.Columns["rua"].HeaderText = "RUA";
+                        grdPessoa.Columns["bairro"].HeaderText = "BAIRRO";
+                    }
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Ocorreu um erro ao carregar as informações!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool VerificarCodigo(string codigo)
+        {
+
+            XmlDocument xml = new XmlDocument();
+
+            if (File.Exists(Util.pathFileXml))
+            {
+                xml.Load(Util.pathFileXml);
+
+                XmlNode noCodigo = xml.SelectSingleNode($"//item[codigo='{codigo}']");
+
+                return noCodigo != null ? false : true;
+
+                //if (noCodigo != null)
+                //    return false;
+                //else
+                //    return true;
+
+
+            }
+
+            return true;
+        }
+
+        private void Alterar(string codigo, string nome, string rua, string bairro)
+        {
+            XmlDocument xml = new XmlDocument();
+
+            if (File.Exists(Util.pathFileXml))
+            {
+                xml.Load(Util.pathFileXml);
+
+                XmlNode noInformacao = xml.SelectSingleNode($"//item[codigo='{codigo}']");
+
+                if(noInformacao != null)
+                {
+                    XmlNode noNome = noInformacao.SelectSingleNode("nome");
+                    noNome.InnerText = nome;
+
+                    XmlNode noRua = noInformacao.SelectSingleNode("rua");
+                    noRua.InnerText = rua;
+
+                    XmlNode noBairro = noInformacao.SelectSingleNode("bairro");
+                    noBairro.InnerText = bairro;
+
+                    xml.Save(Util.pathFileXml);
+                }  
+            }
+        }
+
+        private void Excluir(string codigo)
+        {
+            XmlDocument xml = new XmlDocument();
+            xml.Load(Util.pathFileXml);
+
+            XmlNode xmlDelete = xml.SelectSingleNode($"//item[codigo='{codigo}']");
+
+            if (xmlDelete != null) 
+            {
+                xmlDelete.ParentNode.RemoveChild(xmlDelete);
+                xml.Save(Util.pathFileXml);
+            }
+        }
+
         #endregion
+
     }
 }
