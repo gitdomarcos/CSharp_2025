@@ -52,6 +52,7 @@
     <Compile Include="Classes\Escola.cs" />
     <Compile Include="Classes\Setor.cs" />
     <Compile Include="Classes\Util.cs" />
+    <Compile Include="Classes\Veiculos.cs" />
     <Compile Include="Classes\Viagem.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="frmEnum1.cs">

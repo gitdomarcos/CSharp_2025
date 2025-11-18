@@ -19,6 +19,7 @@ namespace CSharp_2025
         {
             InitializeComponent();
         }
+
         private void frmXML_CRUD_Load(object sender, EventArgs e)
         {
             Util.ConfigurarEstadoTela(Util.EstadoTela.Novo, btnCadastrar, btnAlterar, btnExcluir);

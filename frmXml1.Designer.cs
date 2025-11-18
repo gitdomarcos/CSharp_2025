@@ -30,23 +30,23 @@
         {
             this.gbXmlEx1 = new System.Windows.Forms.GroupBox();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
             this.lblModelo = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtModelo = new System.Windows.Forms.TextBox();
             this.lblAnoFab = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtAnoFab = new System.Windows.Forms.TextBox();
             this.lblValorVenda = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtVlrVenda = new System.Windows.Forms.TextBox();
             this.lblPlaca = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtPlaca = new System.Windows.Forms.TextBox();
             this.lblQntdPortas = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtQntdPortas = new System.Windows.Forms.TextBox();
             this.lblCombustivel = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtCombustivel = new System.Windows.Forms.TextBox();
             this.lblValorCompra = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtVlrCompra = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -65,23 +65,23 @@
             this.gbXmlEx1.Controls.Add(this.btnCancelar);
             this.gbXmlEx1.Controls.Add(this.btnCadastrar);
             this.gbXmlEx1.Controls.Add(this.dataGridView1);
-            this.gbXmlEx1.Controls.Add(this.textBox9);
+            this.gbXmlEx1.Controls.Add(this.txtVlrCompra);
             this.gbXmlEx1.Controls.Add(this.lblValorCompra);
-            this.gbXmlEx1.Controls.Add(this.textBox8);
+            this.gbXmlEx1.Controls.Add(this.txtCombustivel);
             this.gbXmlEx1.Controls.Add(this.lblCombustivel);
-            this.gbXmlEx1.Controls.Add(this.textBox7);
+            this.gbXmlEx1.Controls.Add(this.txtQntdPortas);
             this.gbXmlEx1.Controls.Add(this.lblQntdPortas);
-            this.gbXmlEx1.Controls.Add(this.textBox6);
+            this.gbXmlEx1.Controls.Add(this.txtPlaca);
             this.gbXmlEx1.Controls.Add(this.lblPlaca);
-            this.gbXmlEx1.Controls.Add(this.textBox5);
+            this.gbXmlEx1.Controls.Add(this.txtVlrVenda);
             this.gbXmlEx1.Controls.Add(this.lblValorVenda);
-            this.gbXmlEx1.Controls.Add(this.textBox4);
+            this.gbXmlEx1.Controls.Add(this.txtAnoFab);
             this.gbXmlEx1.Controls.Add(this.lblAnoFab);
-            this.gbXmlEx1.Controls.Add(this.textBox3);
+            this.gbXmlEx1.Controls.Add(this.txtModelo);
             this.gbXmlEx1.Controls.Add(this.lblModelo);
-            this.gbXmlEx1.Controls.Add(this.textBox2);
+            this.gbXmlEx1.Controls.Add(this.txtMarca);
             this.gbXmlEx1.Controls.Add(this.lblMarca);
-            this.gbXmlEx1.Controls.Add(this.textBox1);
+            this.gbXmlEx1.Controls.Add(this.txtCodigo);
             this.gbXmlEx1.Controls.Add(this.lblCodigo);
             this.gbXmlEx1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbXmlEx1.Location = new System.Drawing.Point(12, 12);
@@ -100,14 +100,14 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(228, 104);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 34);
-            this.textBox1.TabIndex = 1;
+            this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(228, 104);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(191, 34);
+            this.txtCodigo.TabIndex = 1;
             // 
             // lblMarca
             // 
@@ -118,14 +118,14 @@
             this.lblMarca.TabIndex = 0;
             this.lblMarca.Text = "Marca:";
             // 
-            // textBox2
+            // txtMarca
             // 
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(228, 166);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 34);
-            this.textBox2.TabIndex = 1;
+            this.txtMarca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarca.Location = new System.Drawing.Point(228, 166);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(191, 34);
+            this.txtMarca.TabIndex = 1;
             // 
             // lblModelo
             // 
@@ -136,14 +136,14 @@
             this.lblModelo.TabIndex = 0;
             this.lblModelo.Text = "Modelo:";
             // 
-            // textBox3
+            // txtModelo
             // 
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(228, 231);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(191, 34);
-            this.textBox3.TabIndex = 1;
+            this.txtModelo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelo.Location = new System.Drawing.Point(228, 231);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(191, 34);
+            this.txtModelo.TabIndex = 1;
             // 
             // lblAnoFab
             // 
@@ -154,14 +154,14 @@
             this.lblAnoFab.TabIndex = 0;
             this.lblAnoFab.Text = "Ano Fabricação:";
             // 
-            // textBox4
+            // txtAnoFab
             // 
-            this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(228, 301);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(191, 34);
-            this.textBox4.TabIndex = 1;
+            this.txtAnoFab.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtAnoFab.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnoFab.Location = new System.Drawing.Point(228, 301);
+            this.txtAnoFab.Name = "txtAnoFab";
+            this.txtAnoFab.Size = new System.Drawing.Size(191, 34);
+            this.txtAnoFab.TabIndex = 1;
             // 
             // lblValorVenda
             // 
@@ -172,14 +172,14 @@
             this.lblValorVenda.TabIndex = 0;
             this.lblValorVenda.Text = "Valor Venda:";
             // 
-            // textBox5
+            // txtVlrVenda
             // 
-            this.textBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(613, 301);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(191, 34);
-            this.textBox5.TabIndex = 1;
+            this.txtVlrVenda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtVlrVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVlrVenda.Location = new System.Drawing.Point(613, 301);
+            this.txtVlrVenda.Name = "txtVlrVenda";
+            this.txtVlrVenda.Size = new System.Drawing.Size(191, 34);
+            this.txtVlrVenda.TabIndex = 1;
             // 
             // lblPlaca
             // 
@@ -190,14 +190,14 @@
             this.lblPlaca.TabIndex = 0;
             this.lblPlaca.Text = "Placa:";
             // 
-            // textBox6
+            // txtPlaca
             // 
-            this.textBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(228, 373);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(191, 34);
-            this.textBox6.TabIndex = 1;
+            this.txtPlaca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlaca.Location = new System.Drawing.Point(228, 373);
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(191, 34);
+            this.txtPlaca.TabIndex = 1;
             // 
             // lblQntdPortas
             // 
@@ -208,14 +208,14 @@
             this.lblQntdPortas.TabIndex = 0;
             this.lblQntdPortas.Text = "Qntd Portas:";
             // 
-            // textBox7
+            // txtQntdPortas
             // 
-            this.textBox7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(613, 104);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(191, 34);
-            this.textBox7.TabIndex = 1;
+            this.txtQntdPortas.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtQntdPortas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQntdPortas.Location = new System.Drawing.Point(613, 104);
+            this.txtQntdPortas.Name = "txtQntdPortas";
+            this.txtQntdPortas.Size = new System.Drawing.Size(191, 34);
+            this.txtQntdPortas.TabIndex = 1;
             // 
             // lblCombustivel
             // 
@@ -226,14 +226,14 @@
             this.lblCombustivel.TabIndex = 0;
             this.lblCombustivel.Text = "Combustível:";
             // 
-            // textBox8
+            // txtCombustivel
             // 
-            this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(613, 164);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(191, 34);
-            this.textBox8.TabIndex = 1;
+            this.txtCombustivel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCombustivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCombustivel.Location = new System.Drawing.Point(613, 164);
+            this.txtCombustivel.Name = "txtCombustivel";
+            this.txtCombustivel.Size = new System.Drawing.Size(191, 34);
+            this.txtCombustivel.TabIndex = 1;
             // 
             // lblValorCompra
             // 
@@ -244,30 +244,34 @@
             this.lblValorCompra.TabIndex = 0;
             this.lblValorCompra.Text = "Valor Compra:";
             // 
-            // textBox9
+            // txtVlrCompra
             // 
-            this.textBox9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(613, 229);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(191, 34);
-            this.textBox9.TabIndex = 1;
+            this.txtVlrCompra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtVlrCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVlrCompra.Location = new System.Drawing.Point(613, 229);
+            this.txtVlrCompra.Name = "txtVlrCompra";
+            this.txtVlrCompra.Size = new System.Drawing.Size(191, 34);
+            this.txtVlrCompra.TabIndex = 1;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 471);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 438);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1232, 278);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1232, 311);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnCadastrar.Location = new System.Drawing.Point(438, 380);
+            this.btnCadastrar.Location = new System.Drawing.Point(479, 362);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(171, 56);
             this.btnCadastrar.TabIndex = 3;
@@ -279,7 +283,7 @@
             // 
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnCancelar.Location = new System.Drawing.Point(622, 380);
+            this.btnCancelar.Location = new System.Drawing.Point(663, 362);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(171, 56);
             this.btnCancelar.TabIndex = 3;
@@ -291,7 +295,7 @@
             // 
             this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAlterar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAlterar.Location = new System.Drawing.Point(806, 380);
+            this.btnAlterar.Location = new System.Drawing.Point(847, 362);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(171, 56);
             this.btnAlterar.TabIndex = 3;
@@ -303,7 +307,7 @@
             // 
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnExcluir.Location = new System.Drawing.Point(990, 380);
+            this.btnExcluir.Location = new System.Drawing.Point(1031, 362);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(171, 56);
             this.btnExcluir.TabIndex = 3;
@@ -342,23 +346,23 @@
 
         private System.Windows.Forms.GroupBox gbXmlEx1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtVlrCompra;
         private System.Windows.Forms.Label lblValorCompra;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtCombustivel;
         private System.Windows.Forms.Label lblCombustivel;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtQntdPortas;
         private System.Windows.Forms.Label lblQntdPortas;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtPlaca;
         private System.Windows.Forms.Label lblPlaca;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtVlrVenda;
         private System.Windows.Forms.Label lblValorVenda;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtAnoFab;
         private System.Windows.Forms.Label lblAnoFab;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Label lblModelo;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;

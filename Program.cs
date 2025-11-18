@@ -16,7 +16,7 @@ namespace CSharp_2025
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmXML_CRUD());
+            Application.Run(new frmXml1());
         }
     }
 }

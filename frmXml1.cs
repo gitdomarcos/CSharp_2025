@@ -41,5 +41,23 @@ namespace CSharp_2025
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        #region Métodos do Formulário
+
+        private bool ValidarCampos()
+        {
+            bool flag = true;
+
+            if()
+
+            return flag;
+        }
+
+        #endregion 
     }
 }
